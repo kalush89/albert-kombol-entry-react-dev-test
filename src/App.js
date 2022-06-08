@@ -1,13 +1,23 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import './App.css';
+import Category from './routes/category/category.component';
+import Navigation from "./routes/navigation/navigation.component";
+import ProductDesc from './routes/product-desc/product-desc.component';
+import Cart from './routes/cart/cart.component';
 
-class App extends PureComponent {
+class App extends Component {
+
+  
   render(){
       return (
-        <div className="App">
-        
-        </div>
+        <Routes>
+          <Route path='/' element={<Navigation />}>
+            <Route index element={<Category />} />
+            <Route path='product-desc/*' element={<ProductDesc />} />
+            <Route path='cart' element={<Cart />} />
+          </Route>
+      </Routes>
       );
   }
 }
