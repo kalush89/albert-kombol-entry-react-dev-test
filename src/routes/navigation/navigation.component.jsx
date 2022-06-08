@@ -11,9 +11,18 @@ class Navigation extends Component {
     constructor(){
         super();
         this.state = {
-
+            activeTab: 'all',
         };
     }
+
+    handleClick = (e) => {
+        this.setState(()=>{
+            return {
+                activeTab: e.target.id
+            }
+        });
+        
+    };
 
     render(){
         return(
@@ -21,9 +30,10 @@ class Navigation extends Component {
                         <div className="nav-container">
                             <div className="wrapper">
                             <div className="cat-nav-wrapper">
-                                <span className="label">All</span>
-                                <span className="label">Tech</span>
-                                <span className="label">Clothes</span>
+                                
+                                <span className={`${this.state.activeTab === 'all' ? 'active':''} label`} id="all" onClick={this.handleClick}>All</span>
+                                <span className={`${this.state.activeTab === 'tech' ? 'active':''} label`} id="tech" onClick={this.handleClick}>Tech</span>
+                                <span className={`${this.state.activeTab === 'clothes' ? 'active':''} label`} id="clothes" onClick={this.handleClick}>Clothes</span>
                             </div>
                             <Link className="logo" to="/">
                                 <StoreLogo />
