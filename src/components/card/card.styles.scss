@@ -1,0 +1,51 @@
+.card-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    height: 444px;
+    width: 386px;
+
+    &:hover {
+        box-shadow: 0px 4px 35px rgb(207, 205, 205);
+    }
+
+    .card-background-image {
+        position: relative;
+        height: 100%;
+        background-size:90%;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 16px;
+        
+    }
+
+    .card-title {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 24px 16px 0 16px;
+        line-height: 160%;
+    }
+
+    .card-price {
+        display: flex;
+        flex-direction: row;
+        padding: 0 16px 16px 16px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 160%;
+    }
+
+    .add-item{
+        position: absolute;
+        margin: 310px 290px 290px 290px;
+
+    }
+
+   
+
+}

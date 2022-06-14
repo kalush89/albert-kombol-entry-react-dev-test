@@ -6,11 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 import {
   ApolloProvider
 } from "@apollo/client";
-
 import { client } from './utils/apollo/apollo.utils';
+import { SwitchProvider } from './contexts/switch.context';
+import { ProductProvider } from './contexts/product.context';
 
 
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -21,7 +22,11 @@ root.render(
   <React.StrictMode>
      <ApolloProvider client={client}>
         <BrowserRouter>
-          <App />
+            <ProductProvider>
+              <SwitchProvider>
+                <App />
+              </SwitchProvider>
+            </ProductProvider>
         </BrowserRouter>
       </ApolloProvider>
   </React.StrictMode>
