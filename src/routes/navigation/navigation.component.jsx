@@ -1,66 +1,118 @@
-import { Component, Fragment } from "react";
-import { Link, Outlet, useOutlet, useOutletContext } from "react-router-dom";
+import { Component } from "react";
+import { Link, Outlet} from "react-router-dom";
+import { connect } from "react-redux";
 
-import SwitchContext from "../../contexts/switch.context";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartOverlay from "../../components/cart-overlay/cart-overlay.component";
+import Currency from "../../components/currency/currency.component";
+
+import { toggleCurrencyList } from "../../store/currencies/currencies.action";
+import { setActiveCategory } from "../../store/categories/categories.action";
 
 
 import { ReactComponent as StoreLogo }  from '../../assets/a-logo.svg';
-import {  ReactComponent as Chevron } from '../../assets/Vector.svg';
+import {  ReactComponent as Chevron } from '../../assets/chev.svg';
 
 import './navigation.styles.scss';
-import Currency from "../../components/currency/currency.component";
+
 class Navigation extends Component {
-    static contextType = SwitchContext;
+    constructor(props){
+        super(props)
+        this.state = {
+            isCartOverlayOpen : false,
+        }
+            
+        }
+    
 
     componentDidMount(){
-        this.context.setActiveTab('all');
+        this.props.setActiveCategory('all');
     }
+
     
     handleClick = (e) => {
-        this.context.setActiveTab(e.target.id );
+        this.props.setActiveCategory(e.target.id );
     };
 
-    handleCurrency = () => {
-        this.context.setShowCurrencies(!this.context.showCurrencies);
-    };
+    toggleCartOverlay = () => {
+        this.setState({
+            isCartOverlayOpen: !this.state.isCartOverlayOpen
+        })
+    }
+
+    handleOverlay = () => {   
+      if(this.state.isCartOverlayOpen ){
+            this.toggleCartOverlay()
+            document.body.classList.remove("no-scroll");
+      }else {
+        this.toggleCartOverlay()
+        document.body.classList.add("no-scroll");
+      }   
+    }
 
     render(){
-        const { activeTab, isOverlayOpen, showCurrencies } = this.context;
-            console.log(showCurrencies);
+        const { toggleCurrencyList, theCurrency, isCurrencyListOpen, activeCategory, cartCount } = this.props;
         return(
-                <Fragment>
+                
                         <div className="nav-container">
                             <div className="wrapper">
                             <div className="cat-nav-wrapper">
-                                <span className={`${activeTab === 'all' ? 'active':''} label`} id="all" onClick={this.handleClick}>All</span>
-                                <span className={`${activeTab === 'tech' ? 'active':''} label`} id="tech" onClick={this.handleClick}>Tech</span>
-                                <span className={`${activeTab === 'clothes' ? 'active':''} label`} id="clothes" onClick={this.handleClick}>Clothes</span>
+                            <Link className={`all-link ${activeCategory === 'all' ? 'active':''} label`} id="all" onClick={(e)=>this.handleClick(e)} to="/all">All</Link>
+                            <Link className={`tech-link ${activeCategory === 'tech' ? 'active':''} label`} id="tech" onClick={this.handleClick} to="/tech">Tech</Link>
+                            <Link className={`tech-link ${activeCategory === 'clothes' ? 'active':''} label`} id="clothes" onClick={this.handleClick} to="/clothes">Clothes</Link>
                             </div>
                             <Link className="logo" to="/">
                                 <StoreLogo />
                             </Link>
                             <div className="actions">
-                            <div className="currency-wrapper" onClick={this.handleCurrency}>
-                                    <span className="symbol">$</span>
+                                    <div className="symbol" onClick={toggleCurrencyList}>{theCurrency[0]}</div>
                                     
-                                    <Chevron className={showCurrencies ? 'inverted' :'chev-icon'}  />
-                                     {showCurrencies && 
-                                     <div className="currency-list"><Currency /></div>
+                                    <Chevron onClick={toggleCurrencyList} className={isCurrencyListOpen ? 'chev-icon' : 'inverted'} />
+                                     {isCurrencyListOpen && 
+                                        <div className="currency-list">
+                                            <Currency onClickOutside={toggleCurrencyList} />
+                                        </div>
                                      }
+                                <div className="cart-icon-container" onClick={()=>this.handleOverlay()}>
+                                     <CartIcon />
+                                     <span className={this.props.flashIsActive ? "counter-flash":""}></span>
+                                        {
+                                            cartCount > 0 ?
+                                            <span className='item-counter'>{cartCount}</span> : ''
+                                        }
                                 </div>
-                                <div className="cart-icon">
-                                     <CartIcon  />
-                                </div>
-                                {isOverlayOpen && <CartOverlay />}
+                                {this.state.isCartOverlayOpen && <CartOverlay toggleCartOverlay={this.toggleCartOverlay} />}
                             </div>
                         </div>
-                    <Outlet activeTab={activeTab}/>
+{/**activeTab={activeCategory} */}
+                    <Outlet  />
                     </div>
-                </Fragment>
+                
         );
     }
 }
 
-export default Navigation;
+const mapDispatchToProps = dispatch => {
+    
+    return {
+        toggleCurrencyList:() => dispatch(toggleCurrencyList()),
+        setActiveCategory:(ownProps) => dispatch(setActiveCategory(ownProps)),
+    }
+};
+
+const mapStateToProps = state => {
+    const { theCurrency, isCurrencyListOpen } = state.currencies;
+    const { cartItems, isOverlayOpen, cartCount, flashIsActive } = state.cart;
+    const { activeCategory } = state.categories;
+    return {
+        theCurrency: theCurrency,
+        isCurrencyListOpen: isCurrencyListOpen,
+        cartItems: cartItems,
+        isOverlayOpen: isOverlayOpen,
+        activeCategory:activeCategory,
+        cartCount: cartCount,
+        flashIsActive: flashIsActive,
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

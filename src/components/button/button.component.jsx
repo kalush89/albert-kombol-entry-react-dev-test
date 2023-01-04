@@ -7,6 +7,8 @@ export const BUTTON_TYPE_CLASSES = {
     hollow: "hollow",
     tiny: "tiny",
     cart: "add-to-cart",
+    Big: "big",
+   
   };
 
 

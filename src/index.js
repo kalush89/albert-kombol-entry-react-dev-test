@@ -3,13 +3,9 @@ import ReactDOM from 'react-dom/client';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import {
-  ApolloProvider
-} from "@apollo/client";
-import { client } from './utils/apollo/apollo.utils';
-import { SwitchProvider } from './contexts/switch.context';
-import { ProductProvider } from './contexts/product.context';
+import { Provider } from 'react-redux';
 
+import { store } from './store/store';
 
 import './index.scss';
 import App from './App';
@@ -20,15 +16,11 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <ApolloProvider client={client}>
-        <BrowserRouter>
-            <ProductProvider>
-              <SwitchProvider>
+        <Provider store={store}>
+          <BrowserRouter>
                 <App />
-              </SwitchProvider>
-            </ProductProvider>
-        </BrowserRouter>
-      </ApolloProvider>
+          </BrowserRouter>
+        </Provider>
   </React.StrictMode>
 );
 

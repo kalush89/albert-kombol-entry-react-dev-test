@@ -1,0 +1,73 @@
+.swatch-picker-container {
+    position: relative;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    align-self: center;
+   // margin: 3px;
+    
+    .item-frame {
+        background-color:#FFFFFF;
+
+        .normal{
+        height: 16px;
+        width: 16px;
+
+        &:hover {
+            background-color: black;
+            color: white;
+            //border: none;
+        }
+    }
+
+    .selected {
+        box-sizing: border-box;
+        width: 16px;
+        height: 16px;
+        outline: 1px solid #5ECE7B;
+        outline-offset: 2px;
+        
+
+        &:hover {
+            background-color: black;
+            color: white;
+            //border: none;
+        }
+    }
+
+    .large-normal{
+        
+        height: 32px;
+        width: 32px;
+
+        &:hover {
+            background-color: black;
+            color: white;
+            
+        }
+    }
+
+    .large-selected {
+        box-sizing: border-box;
+        width: 32px;
+        height: 32px;
+       outline: 1px solid #5ECE7B;
+        //box-sizing: border-box;
+        outline-offset: 2px;
+
+        //position: absolute;
+        
+        &:hover {
+            background-color: black;
+            color: white;
+           // border: none;
+        }
+
+        
+    }
+
+    }
+    
+    
+    
+}

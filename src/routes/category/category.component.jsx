@@ -1,14 +1,11 @@
 import { Component } from "react";
-
-import SwitchContext from "../../contexts/switch.context";
-
+import { connect } from "react-redux";
 
 import CategoryTab from "../../components/category-tabs/category-tab/category-tab.component";
 
 
 import './category.styles.scss';
 class Category extends Component {
-    static contextType = SwitchContext;
    
 
     handleSwitch = (activeTab) => {
@@ -19,19 +16,26 @@ class Category extends Component {
                 return <CategoryTab category={'tech'} />;
             case 'clothes':
                 return <CategoryTab category={'clothes'}/>;
-                default:
-                    return console.log('Nothing in activeTab');
+            default:
+                return <CategoryTab category={'all'}/>;
         }
     }
 
     render(){
-        const { activeTab } = this.context;
+        const { activeCategory } = this.props;
         return(
             <div className="category-container">
-                {this.handleSwitch(activeTab)}
+                {this.handleSwitch(activeCategory)}
             </div>
         );
     }
 }
 
-export default Category;
+const mapStateToProps = state => {
+    const { activeCategory } = state.categories;
+    return {
+        activeCategory: activeCategory,
+    }
+};
+
+export default connect(mapStateToProps, null)(Category);

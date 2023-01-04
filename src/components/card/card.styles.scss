@@ -1,4 +1,5 @@
 .card-container {
+    position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -15,9 +16,9 @@
     .card-background-image {
         position: relative;
         height: 100%;
-        background-size:90%;
         background-position: center;
         background-repeat: no-repeat;
+        background-size: contain;
         padding: 16px;
         
     }
@@ -43,7 +44,6 @@
     .add-item{
         position: absolute;
         margin: 310px 290px 290px 290px;
-
     }
 
    
