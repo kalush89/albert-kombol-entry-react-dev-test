@@ -10,7 +10,8 @@ import TextAttributePicker from "../../components/text-attribute-picker/text-att
 import Button from "../../components/button/button.component";
 import Modal from "../../components/modal/modal.component";
 
-import { getCurrencyDetails } from "../../utils/util";
+import { getCurrencyDetails, compare } from "../../utils/util";
+
 
 import "./product-description.styles.scss";
 
@@ -67,17 +68,10 @@ class ProductDescription extends Component {
         this.props.setAttribute(this.props.state.product, value);
      }
 
-    compare = (a, b) => {
-        if (a.type === b.type) return 0;
-        else if (a.type === 'swatch') return 1;
-      
-        return -1;
-      }
-
     render() {
        const {id, attributes, name, brand, description, gallery, inStock} = this.props.state.product;
        const selectedCurrency = getCurrencyDetails(this.props.state.product.prices, this.props.theCurrency[1]);
-       //attributes.sort(this.compare)//attribute type swatch always has to come last
+     
         return(
             <div className="product-description-container">
                 <Modal 
@@ -111,7 +105,7 @@ class ProductDescription extends Component {
                         <span className="name">{name}</span>
                     </div>
                    
-                    { attributes.slice(0).sort(this.compare).map(attribute =>(
+                    { attributes.slice(0).sort(compare).map(attribute =>(
                         <div key={attribute.id} className={`product-${attribute.id.toLowerCase()}`}>
                              <div className={`${attribute.id.toLowerCase()}-label`}>{attribute.id}</div>
                              <div className={`${attribute.id.toLowerCase()}-picker`}>

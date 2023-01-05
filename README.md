@@ -1,6 +1,6 @@
 # Scandiweb Junior Developer test assignment!
 
-React(Create React App) e-commerce web site. Entry React developer Test by Scandiweb.
+React(Create React App) e-commerce web app. Entry React developer Test by Scandiweb.
 
 ## Description
 
@@ -22,15 +22,12 @@ This is a simple Reactjs e-commerce app. It fetches data via Graphql with the ai
 
 ## Authors
 
-Contributors names and contact info
-
 ex. Albert Kombol  
 ex. [@kombolofficial](https://twitter.com/kombolofficial)
 
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
 * [@tilework/opus](https://www.npmjs.com/package/@tilework/opus)
 * [Sabe](https://sabe.io/tutorials/how-to-create-modal-popup-box)
 * [dev.to](https://dev.to/code_mystery/image-slider-using-html-css-and-javascript-5dfn)
