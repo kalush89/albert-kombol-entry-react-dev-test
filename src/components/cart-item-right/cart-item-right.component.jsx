@@ -91,7 +91,7 @@ class CartItemRight extends Component {
             <div className={rightCartItemStyle}>
                 <Modal 
                     title={"Remove item"}
-                    message={"Remove item from cart?"} 
+                    message={"Remove this item from the cart?"} 
                     isActive={this.state.showModal} 
                     toggleModal={this.toggleModal} 
                     handleRemoval={this.handleRemoval}

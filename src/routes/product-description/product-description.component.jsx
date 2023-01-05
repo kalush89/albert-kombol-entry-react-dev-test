@@ -67,9 +67,17 @@ class ProductDescription extends Component {
         this.props.setAttribute(this.props.state.product, value);
      }
 
+    compare = (a, b) => {
+        if (a.type === b.type) return 0;
+        else if (a.type === 'swatch') return 1;
+      
+        return -1;
+      }
+
     render() {
        const {id, attributes, name, brand, description, gallery, inStock} = this.props.state.product;
        const selectedCurrency = getCurrencyDetails(this.props.state.product.prices, this.props.theCurrency[1]);
+       //attributes.sort(this.compare)//attribute type swatch always has to come last
         return(
             <div className="product-description-container">
                 <Modal 
@@ -102,10 +110,8 @@ class ProductDescription extends Component {
                         <span className="brand">{brand}</span>
                         <span className="name">{name}</span>
                     </div>
-                    {
-                     //Remember to make this and a single attribute css to cover all possible attribute outcome
-                    }
-                    {attributes.map(attribute =>(
+                   
+                    { attributes.slice(0).sort(this.compare).map(attribute =>(
                         <div key={attribute.id} className={`product-${attribute.id.toLowerCase()}`}>
                              <div className={`${attribute.id.toLowerCase()}-label`}>{attribute.id}</div>
                              <div className={`${attribute.id.toLowerCase()}-picker`}>

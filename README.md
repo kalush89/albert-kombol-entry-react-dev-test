@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Scandiweb Junior Developer test assignment!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React(Create React App) e-commerce web site. Entry React developer Test by Scandiweb.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is a simple Reactjs e-commerce app. It fetches data via Graphql with the aid of the Scandiweb made @tilework/opus graphql client, and uses Redux for state management. Among several other features that the above mentioned tools bring to life are product listing, add/remove from cart, add and reduce quantity in cart, product description, etc.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* npm install
 
-### `npm test`
+### Start Server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* npm start
 
-### `npm run build`
+### Build For Production
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* npm run build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contributors names and contact info
 
-### `npm run eject`
+ex. Albert Kombol  
+ex. [@kombolofficial](https://twitter.com/kombolofficial)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgments
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Inspiration, code snippets, etc.
+* [@tilework/opus](https://www.npmjs.com/package/@tilework/opus)
+* [Sabe](https://sabe.io/tutorials/how-to-create-modal-popup-box)
+* [dev.to](https://dev.to/code_mystery/image-slider-using-html-css-and-javascript-5dfn)
+* [udemy](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/learn/lecture/15189776#overview)
+* [Flexbox cheat sheat](https://css-tricks.com/flexbox-cheat-sheet/)
