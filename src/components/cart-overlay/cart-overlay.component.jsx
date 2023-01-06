@@ -20,6 +20,7 @@ class CartOverlay extends Component {
    
     render(){
         const { cartItems, cartCount, cartTotal, theCurrency } = this.props;
+        
         return(
             <div className="cart-overlay-container">
                     <div className="cart-overlay-main">
@@ -36,10 +37,10 @@ class CartOverlay extends Component {
                                      cartItem={item}
                                      uniqueAttributes={item.uniqueAttributes}
                                      theClass='cart-overlay-item-container'
-                                     leftCartItemStyle={'mini-left-cart-item-container'} 
-                                     rightCartItemStyle={'mini-right-cart-item-container'} 
-                                     selected={'selected'} 
-                                     normal={'normal'}/>
+                                     leftCartItemStyle='mini-left-cart-item-container' 
+                                     rightCartItemStyle='mini-right-cart-item-container'
+                                     selected='selected'
+                                     normal='normal'/>
                                 )) : 'Cart is empty!'
                              }
                         </div>

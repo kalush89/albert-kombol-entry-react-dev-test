@@ -8,6 +8,15 @@ This is a simple Reactjs e-commerce app. It fetches data via Graphql with the ai
 
 ## Getting Started
 
+### Built with
+
+- ReactJS(CRA)
+- SCSS
+- Flexbox
+- GraphQL
+- @tilework/opus
+- Redux
+
 ### Installing
 
 * npm install
@@ -22,8 +31,8 @@ This is a simple Reactjs e-commerce app. It fetches data via Graphql with the ai
 
 ## Authors
 
-ex. Albert Kombol  
-ex. [@kombolofficial](https://twitter.com/kombolofficial)
+Albert Kombol  
+[@kombolofficial](https://twitter.com/kombolofficial)
 
 
 ## Acknowledgments

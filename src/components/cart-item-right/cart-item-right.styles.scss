@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     max-width: 153px;
-   // height: 100%;
     align-items: center;
 
     .item-image {
@@ -46,6 +45,10 @@
 
         .item-count {
             align-self: center;
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
         }
 
         .reduce-quantity {
@@ -100,11 +103,11 @@
                 height: 24px;
                 width: 24px;
                 z-index: 3;   
-                background: rgba(0, 0, 0, 0.73);
+                background: var(--primary-dark);
                 cursor: pointer;
         
                 &:hover {
-                    background:rgba(78, 78, 78, 0.73);
+                    background: rgb(100, 100, 100);
                 }
             }
         
@@ -112,12 +115,12 @@
                 height: 24px;
                 width: 24px;
                 z-index: 3;
-                background: rgba(0, 0, 0, 0.73);
+                background: var(--primary-dark);
                 transform: rotate(-180deg);
                 cursor: pointer;
         
                 &:hover {
-                    background:rgba(78, 78, 78, 0.73);
+                    background: rgb(100, 100, 100);
                 }
             }
             

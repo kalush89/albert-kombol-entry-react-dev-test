@@ -46,7 +46,7 @@ class CartItemRight extends Component {
      }
 
      handleRemoval = () =>{
-        console.log('item to delete', this.props.theProps.cartItem )
+        
             this.props.theProps.decreaseItemCount(this.props.theProps.cartItem);
             this.props.theProps.updateCartTotal(this.props.selectedCurrency[0].currency.symbol);
             this.props.theProps.setTax();

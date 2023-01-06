@@ -3,6 +3,8 @@ import { Component } from "react";
 import SwatchPicker from '../swatch-picker/swatch-picker.component';
 import TextAttributePicker from '../text-attribute-picker/text-attribute-picker.component';
 
+import { compare } from "../../utils/util";
+
 import "./cart-item-left.styles.scss";
 
 class CartItemLeft extends Component {
@@ -32,7 +34,7 @@ class CartItemLeft extends Component {
                             }
                         
                     </div>
-                    {attributes.map(attribute =>(
+                    {attributes.slice(0).sort(compare).map(attribute =>(
                         <div key={attribute.id} className={`product-${attribute.id.toLowerCase()}`}>
                         <div className={`${attribute.id.toLowerCase()}-label`}>{attribute.id}</div>
                         <div className={`${attribute.id.toLowerCase()}-picker`}>

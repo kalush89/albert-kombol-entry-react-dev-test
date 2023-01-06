@@ -40,8 +40,6 @@
 
     }
 
-   
-
     .product-color {
         display: flex;
         flex-direction: column;
@@ -133,7 +131,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
-        color: #1D1F22;
+        color: var(--primary-dark);
     }
 
 }
@@ -283,7 +281,7 @@
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
-        color: #1D1F22;
+        color: var(--primary-dark);
     }
 
 }

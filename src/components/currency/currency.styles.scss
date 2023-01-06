@@ -1,10 +1,11 @@
 .currencies-container {
         position: absolute;
-        left: 1185px;
+        left: 1190px;
         top: 65px;
         z-index: 6;
         background-color: white;
         padding: 5px 0;
+        box-shadow: 0px 4px 35px var(--shadow);
 
         ul {
             list-style: none;
@@ -15,7 +16,7 @@
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 160%;
-                color: var(--c-primary-dark);
+                color: var(--primary-dark);
                 text-align: left;
                 height: 45px;
                 width: 114px;

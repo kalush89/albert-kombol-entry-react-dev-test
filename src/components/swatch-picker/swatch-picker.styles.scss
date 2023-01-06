@@ -14,7 +14,7 @@
         width: 16px;
 
         &:hover {
-            background-color: black;
+            background-color: var(--primary-dark);
             color: white;
             //border: none;
         }
@@ -24,12 +24,12 @@
         box-sizing: border-box;
         width: 16px;
         height: 16px;
-        outline: 1px solid #5ECE7B;
+        outline: 1px solid var(--primary-green);
         outline-offset: 2px;
         
 
         &:hover {
-            background-color: black;
+            background-color: var(--primary-dark);
             color: white;
             //border: none;
         }
@@ -41,7 +41,7 @@
         width: 32px;
 
         &:hover {
-            background-color: black;
+            background-color: var(--primary-dark);
             color: white;
             
         }
@@ -51,14 +51,11 @@
         box-sizing: border-box;
         width: 32px;
         height: 32px;
-       outline: 1px solid #5ECE7B;
-        //box-sizing: border-box;
+       outline: 1px solid var(--primary-green);
         outline-offset: 2px;
-
-        //position: absolute;
         
         &:hover {
-            background-color: black;
+            background-color: var(--primary-dark);
             color: white;
            // border: none;
         }

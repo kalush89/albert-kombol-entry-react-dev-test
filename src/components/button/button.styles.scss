@@ -8,31 +8,31 @@
     /* --c-primary */
 
     &:hover {
-        background-color: var(--c-primary-lite);
+        background-color: var(--primary-lite);
     }
     
 }
 
 .primary {
-    background-color: var(--c-primary);
+    background-color: var(--primary-green);
     color: white;
     border: none;
 
     &:hover {
-        background-color: var(--c-primary-lite);
+        background-color: var(--primary-lite);
     }
 }
 
 .hollow {
     background-color: white;
-    color: var(--c-primary-dark);
-    border: 1px solid var(--c-primary-dark);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-            background-color: black;
+            background-color: var(--primary-dark);
             color: white;
             
     }
@@ -42,11 +42,11 @@
     height: 24px;
     width: 24px;
     background-color: white;
-    color: var(--c-primary-dark);
-    border: 1px solid var(--c-primary-dark);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
 
     &:hover {
-        background-color: black;
+        background-color: var(--primary-dark);
         color: white;
         border: none;
     }
@@ -55,7 +55,7 @@
 .add-to-cart {
     height: 65px;
     width: 65px;
-    background-color: var(--c-primary);
+    background-color: var(--primary-green);
     color: white;
     border: none;
     border-radius: 50%;
@@ -71,14 +71,14 @@
     font-size: 14px;
     height: 52px;
     width: 100%;
-    background-color: var(--c-primary);
+    background-color: var(--primary-green);
     color: white;
     border: none;
     cursor: pointer;
     
 
     &:hover {
-        background-color: var(--c-primary-lite);
+        background-color: var(--primary-lite);
     }
 }
 
